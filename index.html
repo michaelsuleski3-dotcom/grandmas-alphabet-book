@@ -1,10 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grandma's Alphabet Book</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grandma's Alphabet Book</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="manifest" href="manifest.json">
+
 </head>
 <body>
 
@@ -18,11 +22,7 @@
     <div class="page">
         <h2 id="currentLetter">A</h2>
 
-        <div
-            id="editor"
-            contenteditable="true"
-            class="editor">
-        </div>
+        <div id="editor" contenteditable="true" class="editor"></div>
     </div>
 
     <div class="tabs" id="tabs"></div>
@@ -31,5 +31,4 @@
 
 <script src="app.js"></script>
 
-</body>
-</html>
+<script>
