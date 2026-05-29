@@ -1,9 +1,8 @@
 {
   "name": "Grandma's Alphabet Book",
   "short_name": "Alphabet Book",
-  "start_url": ".",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#f3ead7",
-  "theme_color": "#e7dcc7",
-  "icons": []
+  "theme_color": "#e7dcc7"
 }
