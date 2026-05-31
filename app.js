@@ -67,7 +67,16 @@ function init() {
     renderTabs();
 }
 
-init();// EXPORT BACKUP
+init();// 
+function init() {
+    editor.innerHTML = data[currentLetter];
+    currentLetterEl.textContent = currentLetter;
+    renderTabs();
+}
+
+init();
+
+// EXPORT BACKUP
 
 document.getElementById("exportBtn").addEventListener("click", () => {
 
