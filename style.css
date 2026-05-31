@@ -83,3 +83,20 @@ h1 {
     background: #8b6f47;
     color: white;
 }
+.backup-controls {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.backup-controls button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+#importFile {
+    max-width: 180px;
+}
