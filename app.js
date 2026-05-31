@@ -67,4 +67,70 @@ function init() {
     renderTabs();
 }
 
-init();
+init();// EXPORT BACKUP
+
+document.getElementById("exportBtn").addEventListener("click", () => {
+
+    const backupData = JSON.stringify(data, null, 2);
+
+    const blob = new Blob(
+        [backupData],
+        { type: "application/json" }
+    );
+
+    const link = document.createElement("a");
+
+    const date = new Date()
+        .toISOString()
+        .split("T")[0];
+
+    link.href = URL.createObjectURL(blob);
+
+    link.download =
+        `GrandmasAlphabetBook-${date}.json`;
+
+    link.click();
+});
+
+// IMPORT BACKUP
+
+document.getElementById("importBtn").addEventListener("click", () => {
+
+    const fileInput =
+        document.getElementById("importFile");
+
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert("Please choose a backup file.");
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(event) {
+
+        try {
+
+            const importedData =
+                JSON.parse(event.target.result);
+
+            data = importedData;
+
+            localStorage.setItem(
+                "alphabetBook",
+                JSON.stringify(data)
+            );
+
+            switchLetter(currentLetter);
+
+            alert("Backup restored!");
+
+        } catch {
+
+            alert("Invalid backup file.");
+        }
+    };
+
+    reader.readAsText(file);
+});
